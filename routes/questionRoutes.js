@@ -10,5 +10,6 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
+console.log("📍 Fichier scoreRoutes.js chargé");
 
 module.exports = router;

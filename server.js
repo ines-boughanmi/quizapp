@@ -20,7 +20,11 @@ app.get('/', (req, res) => {
 
 // Routes principales
 app.use('/questions', questionRoutes);
+
 app.use('/scores', scoreRoutes); 
+
+console.log("📍 Routes /questions et /scores configurées");
+
 
 // Connexion à MongoDB et lancement du serveur
 mongoose.connect(process.env.MONGO_URI, {

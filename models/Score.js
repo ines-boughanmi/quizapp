@@ -1,9 +1,20 @@
 const mongoose = require('mongoose');
 
 const scoreSchema = new mongoose.Schema({
-  user: String, // Nom ou identifiant de l'utilisateur
-  score: Number, // Score obtenu
-  date: { type: Date, default: Date.now } // Date du score
+  joueur: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  score: {
+    type: Number,
+    required: true,
+    min: 0
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 module.exports = mongoose.model('Score', scoreSchema);
