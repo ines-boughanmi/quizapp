@@ -13,11 +13,16 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use('/questions', questionRoutes);
-app.use('/scores', scoreRoutes);
+// Route de test
+app.get('/', (req, res) => {
+  res.send('🎉 Backend QuizApp déployé avec succès !');
+});
 
-// Connexion MongoDB
+// Routes principales
+app.use('/questions', questionRoutes);
+app.use('/scores', scoreRoutes); 
+
+// Connexion à MongoDB et lancement du serveur
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true

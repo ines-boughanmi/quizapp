@@ -6,4 +6,4 @@ const questionSchema = new mongoose.Schema({
   answer: Number
 });
 
-module.exports = mongoose.model('Question', questionSchema);
+module.exports = mongoose.model('Question', questionSchema);  // Nom du modèle "Question"
