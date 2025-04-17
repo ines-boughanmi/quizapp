@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 const Question = require('./models/Question');  // Assurez-vous d'avoir le bon chemin vers votre modèle
 
 require('dotenv').config();
@@ -38,3 +38,4 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch(err => {
   console.error('❌ Erreur MongoDB :', err);
 });
+*/

@@ -16,4 +16,18 @@ router.get('/', async (req, res) => {
 console.log("📍 Fichier scoreRoutes.js chargé");
 
 
+// POST /scores => Enregistrer un score
+router.post('/', async (req, res) => {
+  try {
+    const { joueur, score, date } = req.body;
+
+    const newScore = new Score({ joueur, score, date });
+    await newScore.save();
+
+    res.status(201).json(newScore);
+  } catch (error) {
+    res.status(500).json({ message: 'Erreur lors de l\'enregistrement du score', error });
+  }
+});
+
 module.exports = router;
