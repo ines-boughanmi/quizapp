@@ -3,12 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 
-// Route d'inscription
-const express = require('express');
-const router = express.Router();
-const User = require('../models/user'); // ton modèle User
-const bcrypt = require('bcryptjs');
-
 // POST /auth/signup
 router.post('/signup', async (req, res) => {
   const { username, password } = req.body;
