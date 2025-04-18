@@ -23,7 +23,10 @@ app.get('/', (req, res) => {
 
 // Routes principales
 app.use('/questions', questionRoutes);
-
+app.use('/scores', (req, res, next) => {
+  console.log(`📥 Requête vers /scores${req.url}`);
+  next();
+});
 app.use('/scores', scoreRoutes); 
 app.use('/auth', authRoutes);
 
