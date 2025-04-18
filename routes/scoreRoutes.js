@@ -42,3 +42,15 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+
+/*
+// DELETE /scores => Supprimer tous les scores
+router.delete('/', async (req, res) => {
+  try {
+    await Score.deleteMany({});
+    res.status(200).json({ message: 'Tous les scores ont été supprimés.' });
+  } catch (error) {
+    res.status(500).json({ message: 'Erreur lors de la suppression des scores.', error });
+  }
+});
+*/
