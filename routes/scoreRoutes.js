@@ -3,10 +3,10 @@ const router = express.Router();
 const Score = require('../models/Score'); 
 
 // Route pour récupérer les scores
-router.get('/', async (req, res) => {
+router.get('/user/:email', async (req, res) => {
   console.log('✅ Route GET /scores appelée');
   try {
-    const scores = await Score.find().sort({ score: -1 });
+    const scores = await Score.find({ joueur: req.params.email} ).sort({ score: -1 });
     res.status(200).json(scores);
   } catch (error) {
     console.error('❌ Erreur lors de la récupération des scores :', error);
