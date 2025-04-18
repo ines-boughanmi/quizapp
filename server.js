@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const questionRoutes = require('./routes/questionRoutes');
 const scoreRoutes = require('./routes/scoreRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,13 +19,17 @@ app.get('/', (req, res) => {
   res.send('🎉 Backend QuizApp déployé avec succès !');
 });
 
+
+
 // Routes principales
 app.use('/questions', questionRoutes);
 
 app.use('/scores', scoreRoutes); 
+app.use('/auth', authRoutes);
 
 console.log("📍 Routes /questions et /scores configurées");
 
+app.use('/auth', authRoutes);
 
 // Connexion à MongoDB et lancement du serveur
 mongoose.connect(process.env.MONGO_URI, {
